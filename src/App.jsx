@@ -1,12 +1,17 @@
-import { useState } from 'react'
 import { LoginPage } from './loginpage.jsx'
 import './App.css'
+import { BrowserRouter, Routes, Route } from 'react-router'
+import { ListPage } from './listpage.jsx'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <LoginPage />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<LoginPage />}/>
+        <Route path="/listitems" element={<ListPage />}/>
+      </Routes>
+    </BrowserRouter>
   )
 }
 

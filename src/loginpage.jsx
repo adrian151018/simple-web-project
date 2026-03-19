@@ -1,18 +1,27 @@
-import { useState } from "react"
+import { useNavigate } from "react-router";
 
 export function LoginPage(){
 
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+    const navigate = useNavigate();
 
     return (
         <div>
             <h1>Login</h1>
-            <form>
-                <label for='email'>Email: </label>
-                <input type="text" id='email'/><br />
-                <label for='pass'>Password: </label>
-                <input type="text" id='pass'/><br />
+            <form onSubmit={
+                (event) => {
+                    event.preventDefault();
+                    const formValues = new FormData(event.target);
+                    if(formValues.get("pass").length >= 6){
+                        navigate("/listitems");
+                    }   
+                }
+            }>
+                <label htmlFor='email'>Email: </label>
+                <input type="email" required id='email' name='email'/><br />
+
+                <label htmlFor='pass'>Password: </label>
+                <input type="password" required id='pass' name='pass'/><br />
+
                 <input type="submit" value="Submit" />
             </form>            
         </div>
