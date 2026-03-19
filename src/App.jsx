@@ -10,6 +10,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LoginPage />}/>
         <Route path="/listitems" element={<ListPage />}/>
+        <Route path="/listitems/:id" />
       </Routes>
     </BrowserRouter>
   )
