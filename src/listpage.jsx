@@ -16,7 +16,7 @@ export function ListPage() {
             {
                 items.map(item => (
                     <li onClick={() => 
-                        navigate(`/item/${item.id}`)
+                        navigate(`/listitems/${item.id}`)
                     }>{item.title}</li>
                 ))
             }
