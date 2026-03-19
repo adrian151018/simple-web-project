@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router"
+import { LogOut } from "./logout";
 
 export function ItemPage() {
     const { id } = useParams();
@@ -12,6 +13,7 @@ export function ItemPage() {
 
     return (
         <div>
+            <LogOut />
             <h1>Title: </h1>
             <h4>{item.title}</h4>
             <h1>Body: </h1>
